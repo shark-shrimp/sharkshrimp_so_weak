@@ -1,19 +1,17 @@
-from discord.ext import commands
 import discord
-bot = commands.Bot(command_prefix="!")
 client = discord.Client()
 import json
 with open('TOKEN.json', "r", encoding = "utf8") as file:
     data = json.load(file)
-@bot.event
+@client.event
 async def on_ready():
-    print('目前登入身份：',bot.user)
+    print('目前登入身份：',client.user)
     game = discord.Game('快 還要更快')
-    await bot.change_presence(status=discord.Status.idle, activity=game)
-@bot.event
+    await client.change_presence(status=discord.Status.idle, activity=game)
+@client.event
 async def on_message(message):
     global stop
-    if message.author == bot.user:
+    if message.author == client.user:
         return
     if message.content.startswith("!repeat'"):
         stop = False
@@ -66,4 +64,4 @@ async def on_message(message):
     if message.content.startswith('!stop'):
         stop = True
         return
-bot.run(data['TOKEN1']+data['TOKEN2'])
+client.run(data['TOKEN1']+data['TOKEN2'])
