@@ -7,7 +7,7 @@ with open('TOKEN.json', "r", encoding = "utf8") as file:
 async def on_ready():
     print('目前登入身份：',client.user)
     game = discord.Game('快 還要更快')
-    await client.change_presence(status=discord.Status.idle, activity=game)
+    await client.change_presence(status=discord.Status.idle, activity=discord.CustomActivity('快 還要更快',*,emoji=None,**))
 @client.event
 async def on_message(message):
     global stop
