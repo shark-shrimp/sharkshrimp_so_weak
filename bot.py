@@ -66,4 +66,4 @@ async def on_message(message):
     if message.content.startswith('!stop'):
         stop = True
         return
-bot.run(data['TOKEN'])
+bot.run(data['TOKEN1']+data['TOKEN2'])
