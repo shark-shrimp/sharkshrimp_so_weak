@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "main": "bot.py",
   "scripts": {
-    "start": "bot.py"
+    "start": "python bot.py"
   },
   "dependencies": {
     "discord.py": "1.0.0",
